@@ -5,9 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
+        * {
+            box-sizing: border-box;
         }
+
+        body {
+            margin: 0px;
+            font-family: 'segoe ui';
+        }
+
+        .nav {
+            height: 50px;
+            width: 100%;
+            background-color: #4d4d4d;
+            position: relative;
+        }
+
+        .nav>.nav-header {
+            display: inline;
+        }
+
+        .nav>.nav-header>.nav-title {
+            display: inline-block;
+            font-size: 22px;
+            color: #fff;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .nav>.nav-btn {
+            display: none;
+        }
+
+        .nav>.nav-links {
+            display: inline;
+            float: right;
+            font-size: 18px;
+        }
+
+        .nav>.nav-links>a {
+            display: inline-block;
+            padding: 13px 10px 13px 10px;
+            text-decoration: none;
+            color: #efefef;
+        }
+
+        .nav>.nav-links>a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .nav>#nav-check {
+            display: none;
+        }
+
 
         .mobile-container {
             margin: auto;
@@ -115,8 +164,56 @@
 
 
         @media (max-width:800px) {
-            body {
-                background-color: #555;
+            .nav>.nav-btn {
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+
+            .nav>.nav-btn>label {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                padding: 13px;
+            }
+
+            .nav>.nav-btn>label:hover,
+            .nav #nav-check:checked~.nav-btn>label {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .nav>.nav-btn>label>span {
+                display: block;
+                width: 25px;
+                height: 10px;
+                border-top: 2px solid #eee;
+            }
+
+            .nav>.nav-links {
+                position: absolute;
+                display: block;
+                width: 100%;
+                background-color: #333;
+                height: 0px;
+                transition: all 0.3s ease-in;
+                overflow-y: hidden;
+                top: 50px;
+                left: 0px;
+            }
+
+            .nav>.nav-links>a {
+                display: block;
+                width: 100%;
+            }
+
+            .nav>#nav-check:not(:checked)~.nav-links {
+                height: 0px;
+            }
+
+            .nav>#nav-check:checked~.nav-links {
+                height: calc(100vh - 50px);
+                overflow-y: auto;
             }
 
             .mobile-container {
@@ -215,18 +312,27 @@
 
 
         <!-- Top Navigation Menu -->
-        <div class="topnav" style="margin-top: 5px;">
-            <a href="index.html" class="logo">Md. Mazbaur Rashid</a>
-            <div id="myLinks">
-                <a style="background-color: #555;" href="index.html">Home</a>
-                <a href="contact.html">Contact</a>
-                <a href="about.html">About</a>
-                <a href="#Project">Project Overview</a>
-                <a href="#Project">Skills</a>
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                    MR
+                </div>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="contact.html" >Contact</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skill</a>
+            </div>
         </div>
 
         <div class="intro-container" style="padding:16px; margin-top: 5px; color: #ddd;">
