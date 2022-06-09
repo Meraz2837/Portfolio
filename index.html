@@ -9,6 +9,15 @@
             box-sizing: border-box;
         }
 
+        #button{
+            transition: 0.3s ease;
+        }
+
+        #button:hover{
+            background-color: white;
+            color: black !important;
+        }
+
         body {
             margin: 0px;
             font-family: 'segoe ui';
@@ -62,6 +71,25 @@
             margin: auto;
             height: 500px;
             border-radius: 10px;
+        }
+
+        .container1 {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+
+        /* Then style the iframe to fit in the container div with full height and width */
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 95%;
+            height: 100%;
         }
 
         .Maintenance-message {
@@ -329,28 +357,38 @@
 
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="contact.html" >Contact</a>
+                <a href="contact.html">Contact</a>
                 <a href="about.html">About</a>
                 <a href="skills.html">Skill</a>
             </div>
         </div>
 
-        <div class="intro-container" style="padding:16px; margin-top: 5px; color: #ddd;">
-            <h3>Welcome to my portfolio</h3>
-            <div class="intro">
-                <img class="image" src="Assets/Images/Meraz.jpg" alt="">
-                <div class="details">
-                    <h2>
-                        Md. Mazbaur Rashid
-                    </h2>
-                    <h4>ID: 192-15-2837</h4>
-                    <h4>Profession: Student</h4>
-                    <h4>Subject: BSc in CSE</h4>
-                    <h4>University: Daffodil International University</h4>
 
-                </div>
+        <!-- Video Resuming -->
+
+        <div style="color: white; background-color: #333; padding: 15px; margin: 0;">
+            <h2>Video Resuming</h2>
+            <div class="container1 mx-auto text-center mb-2">
+            
+                <iframe class="responsive-iframe mx-auto"
+                    src="https://www.youtube.com/embed/Vu1FWb9ZVlI">
+                </iframe>
             </div>
         </div>
+
+        <div style="color: white; background-color: #333; padding: 15px; margin: 5px 0;">
+            <img style="width: 95%;" src="Assets/Images/Resum cut.png" alt="Resume">
+            <div style="margin: 20px 0; text-align: center;">
+                <a id="button" target="_blank" style="color: white; text-decoration:none; padding: 5px 15px; border: 2px solid white; border-radius: 10px;" href="Contents/Resume of Md. Mazbaur Rashid.pdf">Show Resume</a>
+            </div>
+        </div>
+        
+        
+
+        <!-- Video Resuming -->
+
+
+
 
         <!-- Footer -->
         <div style="padding:16px; margin-top: 5px; color: #ddd;" class="Footer">
